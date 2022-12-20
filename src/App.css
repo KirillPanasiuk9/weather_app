@@ -1,0 +1,53 @@
+body {
+    background-color: #AEB9BF;
+}
+
+.container {
+    width: 700px;
+    height: 500px;
+    background-color: #DCEAEB;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.location {
+    width: 80%;
+    height: 10%;
+    border: 2px black solid;
+}
+
+.date {
+    width: 80%;
+    height: 10%;
+    border: 2px black solid;
+}
+
+.currentWeather {
+    width: 80%;
+    height: 35%;
+    border: 2px black solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.currentWeather_temperature {
+    width: 45%;
+    height: 80%;
+    border: 2px black solid;
+}
+
+.currentWeather_image {
+    width: 45%;
+    height: 80%;
+    border: 2px black solid;
+}
+
+.weekForecast {
+    width: 80%;
+    height: 25%;
+    border: 2px black solid;
+}
