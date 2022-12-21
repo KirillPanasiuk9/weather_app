@@ -1,23 +1,48 @@
-import {Dispatch} from "redux";
 import {AppDispatch} from "../store";
 import axios from "axios";
 import {sliceReducer} from "./sliceReducer";
+import {forecastReducer} from "./forecastReducer";
 
 
 export const fetchWeather = (city: string) => {
-
     return async (dispatch: AppDispatch) => {
         try {
             dispatch(sliceReducer.actions.dataFetching())
-            const response = await axios.get<any>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=30695debc64687a410313d79f9f0dc05`)
+            const response = await axios.get<any>(`http://api.weatherapi.com/v1/current.json?key=6295d433b18141779c695159222112&q=${city}`)
             dispatch(sliceReducer.actions.dataFetchingSuccess(response.data))
         } catch (error) {
-            // console.log(error)
             // dispatch(sliceReducer.actions.dataFetchingError(error.message))
         }
     }
 }
 
+
+export const fetchWeekWeather = (city: string) => {
+    return async (dispatch: AppDispatch) => {
+        try {
+            dispatch(forecastReducer.actions.forecastDataFetching())
+            const response = await axios.get<any>(`http://api.weatherapi.com/v1/forecast.json?key=6295d433b18141779c695159222112&q=${city}&days=7`)
+            dispatch(forecastReducer.actions.forecastDataFetchingSuccess(response.data))
+        } catch (error) {
+            // dispatch(forecastReducer.actions.forecastDataFetchingError(error.message))
+        }
+    }
+}
+
+export const fetchWeatherByLocation = (lat: number, lon:number) => {
+    return async (dispatch: AppDispatch) => {
+        try {
+            dispatch(sliceReducer.actions.dataFetching())
+            dispatch(forecastReducer.actions.forecastDataFetching())
+            const response = await axios.get<any>(`http://api.weatherapi.com/v1/forecast.json?key=6295d433b18141779c695159222112&q=${lat},${lon}&days=7`)
+            dispatch(sliceReducer.actions.dataFetchingSuccess(response.data))
+            dispatch(forecastReducer.actions.forecastDataFetchingSuccess(response.data))
+            console.log(response.data);
+        } catch (error) {
+
+        }
+    }
+}
 
 
 

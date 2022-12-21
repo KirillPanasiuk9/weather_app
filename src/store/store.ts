@@ -1,10 +1,12 @@
  import {combineReducers} from "redux";
  import {configureStore} from "@reduxjs/toolkit";
  import sliceReducer from "./reducers/sliceReducer";
+ import forecastReducer from "./reducers/forecastReducer";
 
 
  const rootReducer = combineReducers({
-  sliceReducer
+  sliceReducer,
+  forecastReducer,
  })
 
 
