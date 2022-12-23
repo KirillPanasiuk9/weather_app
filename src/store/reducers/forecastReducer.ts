@@ -47,7 +47,6 @@ export const forecastReducer = createSlice({
         },
 
         forecastDataFetchingSuccess(state, action) {
-            console.log(action.payload.forecast.forecastday)
             state.isLoading = false;
             state.weekday = afterTomorrowWeekDay();
             state.tomorrowTemperature = action.payload.forecast.forecastday[1].day.avgtemp_c;

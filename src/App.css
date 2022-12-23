@@ -1,7 +1,6 @@
 body {
     background: linear-gradient(180deg, #005C97 0%, #363795 100%);
     background-repeat: no-repeat;
-    /*width: 100vh;*/
     width: 100%;
     height: 100vh;
     font-family: 'Cabin';
@@ -17,77 +16,9 @@ body {
     width: 100%;
 }
 
-.cityForm {
-    margin: 100px auto;
-    margin-bottom: 30px;
-    max-width: 700px;
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.cityForm_Input {
-    width: 65%;
-    height: 80%;
-    background: none;
-    padding-left: 10px;
-    font-size: 30px;
-    color: white;
-    border: 2px white solid;
-    border-radius: 10px;
-}
-
-.cityForm_Input:focus {
-    border: 2px #FFB200 solid;
-}
-
-.cityForm_Button {
-    width: 20%;
-    height: 90%;
-    background: none;
-    border: 2px #FFB200 solid;
-    border-radius: 10px;
-    font-size: 18px;
-    color: #FFB200;
-}
-
-.cityForm_Button:hover {
-    background: #FFB200;
-    color: white;
-    transition: 0.5s;
-}
-
-.cityForm_Button:active {
-    background: #FFB200;
-    color: white;
-}
-
-.cityForm_locationButton {
-    width: 7%;
-    height: 90%;
-    background: none;
-    border: 0px #FFB200 solid;
-    border-radius: 10px;
-}
-
-.cityForm_locationButton svg {
-    width: 30px;
-    height: 50px;
-}
-
-.cityForm_locationButton svg:hover {
-    width: 40px;
-    height: 60px;
-    transition: 0.5s;
-}
-
-.cityForm_locationButton svg:active {
-    transform: rotatey(180deg);
-    transition: 0.1s;
-}
-
 .container {
+    padding-top: 3%;
+    padding-bottom: 5%;
     width: 700px;
     height: 500px;
     background: linear-gradient(180deg, #005C97 0%, #363795 100%);
@@ -100,103 +31,12 @@ body {
     box-shadow: 4px 4px 57px 52px rgba(34, 60, 80, 0.2);
 }
 
-.location {
-    width: 80%;
-    height: 10%;
-    font-size: 25px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-.date {
-    width: 80%;
-    height: 10%;
-    font-size: 25px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-.currentWeather {
-    width: 80%;
-    height: 35%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.currentWeather_temperature {
-    width: 45%;
-    height: 80%;
-    font-size: 120px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    color: #FFB200;
-}
-
-.currentWeather_image {
-    width: 45%;
-    height: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.currentWeather_image img {
-    width: 150px;
-    margin: 0 auto;
-}
-
-.weekForecast {
-    width: 80%;
-    height: 25%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-}
-
-.weekForecast_day {
-    font-size: 20px;
-    width: 25%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-}
-
-.weekForecast_day_date {
-    width: 100%;
-    height: 20%;
-    text-align: center;
-}
-
-.weekForecast_day_icon {
-    width: 50%;
-    height: 40%;
-    text-align: center;
-}
-
-.weekForecast_day_t {
-    width: 100%;
-    height: 30%;
-    text-align: center;
-    font-size: 40px;
-}
-
 
 
 @media(max-width: 768px) {
     body {
         width: 100vw;
         max-width: 768px;
-    }
-
-    .cityForm {
-        max-width: 90%;
     }
 
     .container {
@@ -206,48 +46,11 @@ body {
         background: none;
         box-shadow: none;
     }
-
-    .location {
-        margin-top: 50px;
-        margin-bottom: 30px;
-    }
 }
 
 @media (max-width: 576px) {
     .container {
         width: 100%;
         height: 600px;
-    }
-
-    .cityForm_Input {
-        font-size: 25px;
-    }
-
-    .location {
-        margin-top: 0px;
-        font-size: 25px;
-    }
-
-    .date {
-        font-size: 25px;
-    }
-
-    .weekForecast {
-        flex-direction: column;
-    }
-
-    .weekForecast_day {
-        width: 100%;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .weekForecast_day_icon {
-        width: 100px;
-        height: 60px;
-    }
-
-    .weekForecast_day_t {
-        font-size: 30px;
     }
 }

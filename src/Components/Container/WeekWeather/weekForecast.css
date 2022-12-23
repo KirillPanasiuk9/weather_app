@@ -1,0 +1,60 @@
+.weekForecast {
+    width: 80%;
+    height: 25%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.weekForecast_day {
+    font-size: 20px;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weekForecast_day_date {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+
+.weekForecast_day_icon {
+    width: 50%;
+    height: 40%;
+    text-align: center;
+}
+
+.weekForecast_day_t {
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+
+
+@media (max-width: 576px) {
+    .weekForecast {
+        flex-direction: column;
+    }
+
+    .weekForecast_day {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .weekForecast_day_icon {
+        width: 100px;
+        height: 60px;
+    }
+
+    .weekForecast_day_t {
+        font-size: 30px;
+    }
+}

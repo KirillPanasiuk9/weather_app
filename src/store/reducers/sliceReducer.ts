@@ -32,16 +32,8 @@ function getDate() {
     }
     const current_datetime = new Date();
     const day = zero_first_format(current_datetime.getDate());
-    const weekDay = () => {
-        switch (current_datetime.getDay()) {
-            case 1 : return "Monday"
-            case 2 : return "Tuesday"
-            case 3 : return "Wednesday"
-            case 4 : return "Thursday"
-            case 5 : return "Friday"
-            case 6 : return "Saturday"
-            case 7 : return "Sunday"
-        }
+    function weekDay(date = new Date(), locale = 'en-US') {
+        return date.toLocaleDateString(locale, {weekday: 'long'});
     }
     const month = () => {
         switch (current_datetime.getMonth()+1) {

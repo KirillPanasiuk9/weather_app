@@ -1,0 +1,31 @@
+.currentWeather {
+    width: 80%;
+    height: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.currentWeather_temperature {
+    width: 45%;
+    height: 80%;
+    font-size: 120px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    color: #FFB200;
+}
+
+.currentWeather_image {
+    width: 45%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.currentWeather_image img {
+    width: 150px;
+    margin: 0 auto;
+}

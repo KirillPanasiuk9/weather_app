@@ -1,0 +1,14 @@
+.date {
+    width: 80%;
+    height: 10%;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+@media (max-width: 576px) {
+    .date {
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,100 @@
+.cityForm {
+    margin: 150px auto 30px auto;
+    /*margin-top: 100px;*/
+    /*margin-bottom: 30px;*/
+    /*margin-top: 200px;*/
+    max-width: 700px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cityForm_Input {
+    width: 65%;
+    height: 80%;
+    background: none;
+    padding-left: 10px;
+    font-size: 30px;
+    color: white;
+    border: 2px white solid;
+    border-radius: 10px;
+    transition: 0.1s;
+}
+
+.cityForm_Input:focus {
+    border: none;
+    outline: 2px #FFB200 solid;
+}
+
+.cityForm_Button {
+    width: 20%;
+    height: 90%;
+    background: none;
+    border: 2px #FFB200 solid;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #FFB200;
+}
+
+.cityForm_Button:hover {
+    background: #FFB200;
+    color: white;
+    transition: 0.5s;
+}
+
+.cityForm_Button:active {
+    background: #FFB200;
+    color: white;
+}
+
+.cityForm_locationButton {
+    width: 7%;
+    height: 90%;
+    background: none;
+    border: 0px #FFB200 solid;
+    border-radius: 10px;
+}
+
+.cityForm_locationButton_off:hover {
+    width: 40px;
+    height: 60px;
+    transition: 0.5s;
+}
+
+.cityForm_locationButton_off {
+    width: 30px;
+    height: 50px;
+    transition: 0.5s;
+}
+
+.cityForm_locationButton_on {
+    width: 40px;
+    height: 60px;
+    animation: 1s linear rotate infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+
+
+
+@media(max-width: 768px) {
+    body {
+        width: 100vw;
+        max-width: 768px;
+    }
+
+    .cityForm {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .cityForm_Input {
+        font-size: 25px;
+    }
+}
