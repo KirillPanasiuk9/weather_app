@@ -20,7 +20,7 @@ const shakeInput = () => {
 export const fetchWeather = (city: string) => {
     return async (dispatch: AppDispatch) => {
         try {
-            const response = await axios.get<any>(`http://api.weatherapi.com/v1/current.json?key=6295d433b18141779c695159222112&q=${city}`)
+            const response = await axios.get<any>(`https://api.weatherapi.com/v1/current.json?key=6295d433b18141779c695159222112&q=${city}`)
             dispatch(sliceReducer.actions.dataFetchingSuccess(response.data))
         } catch (error) {
             shakeInput()
@@ -33,7 +33,7 @@ export const fetchWeather = (city: string) => {
 export const fetchWeekWeather = (city: string) => {
     return async (dispatch: AppDispatch) => {
         try {
-            const response = await axios.get<any>(`http://api.weatherapi.com/v1/forecast.json?key=6295d433b18141779c695159222112&q=${city}&days=7`)
+            const response = await axios.get<any>(`https://api.weatherapi.com/v1/forecast.json?key=6295d433b18141779c695159222112&q=${city}&days=7`)
             dispatch(forecastReducer.actions.forecastDataFetchingSuccess(response.data))
         } catch (error) {
             // dispatch(forecastReducer.actions.forecastDataFetchingError(error.message))
@@ -46,7 +46,7 @@ export const fetchWeekWeather = (city: string) => {
 export const fetchWeatherByLocation = (lat: number, lon:number) => {
     return async (dispatch: AppDispatch) => {
         try {
-            const response = await axios.get<any>(`http://api.weatherapi.com/v1/forecast.json?key=6295d433b18141779c695159222112&q=${lat},${lon}&days=7`)
+            const response = await axios.get<any>(`https://api.weatherapi.com/v1/forecast.json?key=6295d433b18141779c695159222112&q=${lat},${lon}&days=7`)
             dispatch(sliceReducer.actions.dataFetchingSuccess(response.data))
             dispatch(forecastReducer.actions.forecastDataFetchingSuccess(response.data))
         } catch (error) {
