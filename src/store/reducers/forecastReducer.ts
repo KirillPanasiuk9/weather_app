@@ -26,7 +26,7 @@ const afterTomorrowWeekDay = () => {
     const weekDay = () => {
         switch (currentDate.getDay()) {
             case 6 : return "Monday"
-            case 7 : return "Tuesday"
+            case 0 : return "Tuesday"
             case 1 : return "Wednesday"
             case 2 : return "Thursday"
             case 3 : return "Friday"
@@ -49,8 +49,8 @@ export const forecastReducer = createSlice({
         forecastDataFetchingSuccess(state, action) {
             state.isLoading = false;
             state.weekday = afterTomorrowWeekDay();
-            state.tomorrowTemperature = action.payload.forecast.forecastday[1].day.avgtemp_c;
-            state.afterTomorrowTemperature = action.payload.forecast.forecastday[2].day.avgtemp_c;
+            state.tomorrowTemperature = Math.round(action.payload.forecast.forecastday[1].day.avgtemp_c);
+            state.afterTomorrowTemperature = Math.round(action.payload.forecast.forecastday[2].day.avgtemp_c);
             state.tomorrowIcon = action.payload.forecast.forecastday[1].day.condition.icon;
             state.afterTomorrowIcon = action.payload.forecast.forecastday[2].day.condition.icon;
         },

@@ -13,7 +13,6 @@ const CityForm:FC = () => {
     const isLoading = useTypedSelector(state => state.sliceReducer.isLoading)
     const [inputValue, setInputValue] = useState("London");
     const city = useRef("London");
-    console.log(isLoading)
 
     useEffect(() => {
         city.current = inputValue;

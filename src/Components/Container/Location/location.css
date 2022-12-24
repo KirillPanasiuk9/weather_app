@@ -18,6 +18,8 @@
 @media (max-width: 576px) {
     .location {
         margin-top: 0px;
+        margin-bottom: 30px;
         font-size: 25px;
     }
 }
+

@@ -29,3 +29,17 @@
     width: 150px;
     margin: 0 auto;
 }
+
+
+@media (max-width: 450px) {
+    .currentWeather_temperature {
+        margin: 30px 0px 30px 0px;
+        font-size: 80px;
+        width: 55%;
+    }
+
+    .currentWeather_image {
+        width: 30%;
+        height: 70%;
+    }
+}
