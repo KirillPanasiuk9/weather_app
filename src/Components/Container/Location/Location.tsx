@@ -4,11 +4,7 @@ import "./location.css"
 
 const Location:FC = () => {
 
-    const currentWeather = {
-        location: useTypedSelector(state => state.sliceReducer.location),
-        region: useTypedSelector(state => state.sliceReducer.region),
-        country: useTypedSelector(state => state.sliceReducer.country),
-    }
+    const currentWeather = useTypedSelector(state => state.currentWeatherReducer)
 
     return (
         <div className="location">{currentWeather.location}, {currentWeather.region}, {currentWeather.country}</div>

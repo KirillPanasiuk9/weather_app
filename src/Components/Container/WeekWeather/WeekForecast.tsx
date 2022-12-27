@@ -1,16 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 import "./weekForecast.css"
 import {useTypedSelector} from "../../../hooks/useTypedSeletor";
 
-const WeekForecast = () => {
+const WeekForecast:FC = () => {
 
+    const currentWeather = useTypedSelector(state => state.currentWeatherReducer)
 
-    const currentWeather = {
-        temperature: useTypedSelector(state => state.sliceReducer.currentWeatherTemperature),
-        icon: useTypedSelector(state => state.sliceReducer.icon),
-    }
-
-    const forecastWeather = useTypedSelector(state => state.forecastReducer);
+    const forecastWeather = useTypedSelector(state => state.forecastWeatherReducer);
 
 
     return (
@@ -18,7 +14,7 @@ const WeekForecast = () => {
             <div className="weekForecast_day">
                 <div className="weekForecast_day_date">Today</div>
                 <img className="weekForecast_day_icon" src={currentWeather.icon}/>
-                <div className="weekForecast_day_t">{currentWeather.temperature} °</div>
+                <div className="weekForecast_day_t">{currentWeather.currentWeatherTemperature} °</div>
             </div>
             <div className="weekForecast_day">
                 <div className="weekForecast_day_date">Tomorrow</div>

@@ -1,12 +1,10 @@
 import React, {FC} from 'react';
 import "./date.css"
-import {useTypedSelector} from "../../hooks/useTypedSeletor";
+import {useTypedSelector} from "../../../hooks/useTypedSeletor";
 
 const Date:FC = () => {
 
-    const currentWeather = {
-        date: useTypedSelector(state => state.sliceReducer.date),
-    }
+    const currentWeather = useTypedSelector(state => state.currentWeatherReducer)
 
     return (
         <div className="date">{currentWeather.date}</div>

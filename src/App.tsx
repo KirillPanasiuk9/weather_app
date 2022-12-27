@@ -3,12 +3,12 @@ import './App.css';
 import CityForm from "./Components/CityForm/CityForm";
 import CurrentWeather from "./Components/Container/CurrentWeather/CurrentWeather";
 import Location from "./Components/Container/Location/Location";
-import Date from "./Components/Date/Date";
+import Date from "./Components/Container/Date/Date";
 import WeekForecast from "./Components/Container/WeekWeather/WeekForecast";
 
 
 
-function App() {
+const App: React.FC = () => {
 
     return (
     <div className="App">

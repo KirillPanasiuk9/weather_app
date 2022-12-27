@@ -1,7 +1,9 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {CurrentWeather} from "../../types/types";
 
 
-interface State {
+
+export interface CurrentWeatherState {
     location: string;
     country: string;
     region: string;
@@ -12,7 +14,7 @@ interface State {
     error: string;
 }
 
-const initialState: State = {
+const initialState: CurrentWeatherState = {
     location: "",
     country: "",
     region: "",
@@ -22,8 +24,6 @@ const initialState: State = {
     isLoading: false,
     error: "",
 }
-
-
 
 function getDate() {
     function zero_first_format(value:any) {
@@ -56,15 +56,16 @@ function getDate() {
     return weekDay()+", "+day+" "+month()+" "+year;
 }
 
-export const sliceReducer = createSlice({
-    name: "sliceReducer",
+
+export const currentWeatherReducer = createSlice({
+    name: "currentWeatherReducer",
     initialState,
     reducers: {
-        dataFetching(state) {
+        isDataFetching(state):void {
             state.isLoading = true;
         },
 
-        dataFetchingSuccess(state, action) {
+        isDataFetchingSuccess(state, action:PayloadAction<CurrentWeather>):void {
             state.isLoading = false;
             state.error = "";
             state.location = action.payload.location.name;
@@ -75,7 +76,7 @@ export const sliceReducer = createSlice({
             state.icon = action.payload.current.condition.icon;
         },
 
-        dataFetchingError(state, action: PayloadAction<string>) {
+        isDataFetchingError(state, action:PayloadAction<string>):void {
             state.isLoading = false;
             state.error = action.payload;
         },
@@ -84,5 +85,5 @@ export const sliceReducer = createSlice({
 
 
 
-export default sliceReducer.reducer;
-export const {dataFetching, dataFetchingError, dataFetchingSuccess} = sliceReducer.actions
+export default currentWeatherReducer.reducer;
+export const {isDataFetching, isDataFetchingError, isDataFetchingSuccess} = currentWeatherReducer.actions
