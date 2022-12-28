@@ -22,7 +22,7 @@ const shakeInput = ():void => {
 export const fetchWeather = (city: string) => {
     return async (dispatch: AppDispatch) => {
         try {
-            const response = await axios.get<CurrentWeather>(`https://api.weatherapi.com/v1/current.json?key=6295d433b1814177c695159222112&q=${city}`)
+            const response = await axios.get<CurrentWeather>(`https://api.weatherapi.com/v1/current.json?key=6295d433b18141779c695159222112&q=${city}`)
             dispatch(isDataFetchingSuccess(response.data))
         } catch (error: any) {
             shakeInput()
