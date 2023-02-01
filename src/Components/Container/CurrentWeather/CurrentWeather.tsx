@@ -4,8 +4,7 @@ import "./currentWeather.css"
 
 const CurrentWeather:FC = () => {
 
-    const currentWeather = useTypedSelector(state => state.currentWeatherReducer)
-
+    const currentWeather = useTypedSelector(state => state.currentWeatherReducer);
 
     return (
         <div className="currentWeather">

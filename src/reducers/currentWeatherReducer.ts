@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {CurrentWeather} from "../../types/types";
+import {CurrentWeather} from "../types/types";
 
 
 
@@ -61,6 +61,7 @@ export const currentWeatherReducer = createSlice({
     name: "currentWeatherReducer",
     initialState,
     reducers: {
+
         isDataFetching(state):void {
             state.isLoading = true;
         },

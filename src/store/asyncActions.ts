@@ -1,8 +1,8 @@
 import {AppDispatch} from "./store";
 import axios from "axios";
 import {CurrentWeather, CurrentWeekWeather, WeatherByLocation} from "../types/types";
-import {isDataFetchingSuccess, isDataFetchingError} from "./reducers/currentWeatherReducer"
-import {isForecastDataFetchingSuccess, isForecastDataFetchingError} from "./reducers/forecastWeatherReducer"
+import {isDataFetchingSuccess, isDataFetchingError} from "../reducers/currentWeatherReducer"
+import {isForecastDataFetchingSuccess, isForecastDataFetchingError} from "../reducers/forecastWeatherReducer"
 
 
 

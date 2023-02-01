@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {CurrentWeekWeather} from "../../types/types";
+import {CurrentWeekWeather} from "../types/types";
 
 
 

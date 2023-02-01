@@ -4,7 +4,7 @@ import {useTypedDispatch} from "../../hooks/useTypedDispatch";
 import "./cityForm.css"
 import {useTypedSelector} from "../../hooks/useTypedSeletor";
 import {GeolocationDenied, Position} from "../../types/types";
-import {isDataFetching} from "../../store/reducers/currentWeatherReducer"
+import {isDataFetching} from "../../reducers/currentWeatherReducer"
 
 
 
