@@ -1,3 +1,23 @@
+export interface CurrentWeatherState {
+    location: string;
+    country: string;
+    region: string;
+    date: string;
+    currentWeatherTemperature: number;
+    icon: any;
+    isLoading: boolean;
+    error: string;
+}
+
+export interface ForecastState {
+    weekday: any,
+    tomorrowTemperature: number,
+    afterTomorrowTemperature: number,
+    tomorrowIcon: any,
+    afterTomorrowIcon: string,
+    error: string,
+}
+
 export type Position = {
     coords: {
         latitude: number;

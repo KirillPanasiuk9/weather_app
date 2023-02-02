@@ -1,6 +1,6 @@
 import { TypedUseSelectorHook, useSelector } from "react-redux";
-import {CurrentWeatherState} from "../reducers/currentWeatherReducer";
-import {ForecastState} from "../reducers/forecastWeatherReducer";
+import {CurrentWeatherState} from "../types/types";
+import {ForecastState} from "../types/types";
 
 export type RootState2 = {
     currentWeatherReducer: CurrentWeatherState,

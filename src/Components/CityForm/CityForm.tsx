@@ -35,7 +35,6 @@ const CityForm:FC = () => {
         const success = (position: Position):void => {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
-            console.log(position)
             dispatch(fetchWeatherByLocation(lat, lon))
         };
         const fail = (error: GeolocationDenied):void => {
@@ -61,7 +60,8 @@ const CityForm:FC = () => {
             <button
                 className="cityForm_Button"
                 onClick={() => getWeather()}
-            >Get Weather
+            >
+                Get Weather
             </button>
             <button
                 className="cityForm_locationButton"

@@ -1,18 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {CurrentWeather} from "../types/types";
-
-
-
-export interface CurrentWeatherState {
-    location: string;
-    country: string;
-    region: string;
-    date: string;
-    currentWeatherTemperature: number;
-    icon: any;
-    isLoading: boolean;
-    error: string;
-}
+import {CurrentWeatherState ,CurrentWeather} from "../types/types";
 
 const initialState: CurrentWeatherState = {
     location: "",
@@ -66,7 +53,7 @@ export const currentWeatherReducer = createSlice({
             state.isLoading = true;
         },
 
-        isDataFetchingSuccess(state, action:PayloadAction<CurrentWeather>):void {
+        isDataFetchingSuccess(state,  action:PayloadAction<CurrentWeather>):void {
             state.isLoading = false;
             state.error = "";
             state.location = action.payload.location.name;

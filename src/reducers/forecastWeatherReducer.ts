@@ -1,17 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {CurrentWeekWeather} from "../types/types";
+import {ForecastState, CurrentWeekWeather} from "../types/types";
 
-
-
-export interface ForecastState {
-    weekday: any,
-    tomorrowTemperature: number,
-    afterTomorrowTemperature: number,
-    tomorrowIcon: any,
-    afterTomorrowIcon: string,
-    isLoading: boolean,
-    error: string,
-}
 
 const initialState: ForecastState = {
     weekday: "",
@@ -19,7 +8,6 @@ const initialState: ForecastState = {
     afterTomorrowTemperature: 0,
     tomorrowIcon: "",
     afterTomorrowIcon: "",
-    isLoading: false,
     error: "",
 }
 
@@ -45,12 +33,8 @@ export const forecastWeatherReducer = createSlice({
     name: "forecastWeatherReducer",
     initialState,
     reducers: {
-        isForecastDataFetching(state):void {
-            state.isLoading = true;
-        },
 
         isForecastDataFetchingSuccess(state, action: PayloadAction<CurrentWeekWeather>):void {
-            state.isLoading = false;
             state.weekday = afterTomorrowWeekDay();
             state.tomorrowTemperature = Math.round(action.payload.forecast.forecastday[1].day.avgtemp_c);
             state.afterTomorrowTemperature = Math.round(action.payload.forecast.forecastday[2].day.avgtemp_c);
@@ -59,11 +43,10 @@ export const forecastWeatherReducer = createSlice({
         },
 
         isForecastDataFetchingError(state, action: PayloadAction<string>):void {
-            state.isLoading = false;
             state.error = action.payload;
         },
     }
 })
 
 export default forecastWeatherReducer.reducer;
-export const {isForecastDataFetching, isForecastDataFetchingError, isForecastDataFetchingSuccess} = forecastWeatherReducer.actions;
+export const {isForecastDataFetchingError, isForecastDataFetchingSuccess} = forecastWeatherReducer.actions;
