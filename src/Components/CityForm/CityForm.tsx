@@ -1,17 +1,17 @@
 import React, {FC, useEffect, useRef, useState} from 'react';
-import {fetchWeather, fetchWeatherByLocation, fetchWeekWeather} from "../../store/asyncActions";
 import {useTypedDispatch} from "../../hooks/useTypedDispatch";
-import "./cityForm.css"
+import "./cityForm.css";
 import {useTypedSelector} from "../../hooks/useTypedSeletor";
 import {GeolocationDenied, Position} from "../../types/types";
-import {isDataFetching} from "../../reducers/currentWeatherReducer"
-
+import {isDataFetching, isDataFetchingError} from "../../reducers/currentWeatherReducer";
+import {useActions} from "../../hooks/useActions";
 
 
 const CityForm:FC = () => {
 
     const dispatch = useTypedDispatch();
-    const isLoading = useTypedSelector(state => state.currentWeatherReducer.isLoading)
+    const {fetchWeather, fetchWeekWeather, fetchWeatherByLocation} = useActions();
+    const isLoading = useTypedSelector(state => state.currentWeatherReducer.isLoading);
     const [inputValue, setInputValue] = useState("London");
     const city = useRef<string>("London");
 
@@ -20,29 +20,27 @@ const CityForm:FC = () => {
     }, [inputValue]);
 
     useEffect(() => {
-        dispatch(fetchWeather("London"))
-        dispatch(fetchWeekWeather("London"))
+        fetchWeather("London");
+        fetchWeekWeather("London");
     }, []);
 
     const getWeather = ():void => {
-        dispatch(fetchWeather(city.current))
-        dispatch(fetchWeekWeather(city.current))
-        setInputValue("")
-    }
+        fetchWeather(city.current);
+        fetchWeekWeather(city.current);
+        setInputValue("");
+    };
 
     const getWeatherByLocation = ():void => {
-        dispatch(isDataFetching())
+        dispatch(isDataFetching());
         const success = (position: Position):void => {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-            dispatch(fetchWeatherByLocation(lat, lon))
+            const {latitude, longitude} = position.coords;
+            fetchWeatherByLocation(latitude, longitude);
         };
         const fail = (error: GeolocationDenied):void => {
-            console.log(error)
-        }
-        navigator.geolocation.getCurrentPosition(success, fail)
-    }
-
+            dispatch(isDataFetchingError(error.message));
+        };
+        navigator.geolocation.getCurrentPosition(success, fail);
+    };
 
 
     return (

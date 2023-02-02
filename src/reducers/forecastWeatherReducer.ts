@@ -9,13 +9,13 @@ const initialState: ForecastState = {
     tomorrowIcon: "",
     afterTomorrowIcon: "",
     error: "",
-}
+};
 
 const afterTomorrowWeekDay = () => {
     const date = new Date();
-    date.setDate(date.getDate() + 2)
-    return date.toLocaleDateString('en-GB', {weekday: 'long'})
-}
+    date.setDate(date.getDate() + 2);
+    return date.toLocaleDateString('en-GB', {weekday: 'long'});
+};
 
 
 export const forecastWeatherReducer = createSlice({
@@ -34,8 +34,8 @@ export const forecastWeatherReducer = createSlice({
         isForecastDataFetchingError(state, action: PayloadAction<string>):void {
             state.error = action.payload;
         },
-    }
-})
+    },
+});
 
 export default forecastWeatherReducer.reducer;
 export const {isForecastDataFetchingError, isForecastDataFetchingSuccess} = forecastWeatherReducer.actions;

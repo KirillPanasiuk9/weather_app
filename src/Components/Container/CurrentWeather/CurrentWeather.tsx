@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {useTypedSelector} from "../../../hooks/useTypedSeletor";
-import "./currentWeather.css"
+import "./currentWeather.css";
 
 const CurrentWeather:FC = () => {
 

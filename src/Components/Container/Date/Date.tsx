@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import "./date.css"
+import "./date.css";
 import {useTypedSelector} from "../../../hooks/useTypedSeletor";
 
 const Date:FC = () => {

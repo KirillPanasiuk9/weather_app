@@ -10,11 +10,11 @@ const initialState: CurrentWeatherState = {
     icon: "",
     isLoading: false,
     error: "",
-}
+};
 
 function getDate() {
     return new Date().toLocaleDateString('en-GB', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
-}
+};
 
 
 export const currentWeatherReducer = createSlice({
@@ -26,7 +26,7 @@ export const currentWeatherReducer = createSlice({
             state.isLoading = true;
         },
 
-        isDataFetchingSuccess(state,  action:PayloadAction<CurrentWeather>):void {
+        isDataFetchingSuccess(state, action:PayloadAction<CurrentWeather>):void {
             state.isLoading = false;
             state.error = "";
             state.location = action.payload.location.name;
@@ -41,10 +41,10 @@ export const currentWeatherReducer = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         },
-    }
-})
+    },
+});
 
 
 
 export default currentWeatherReducer.reducer;
-export const {isDataFetching, isDataFetchingError, isDataFetchingSuccess} = currentWeatherReducer.actions
+export const {isDataFetching, isDataFetchingError, isDataFetchingSuccess} = currentWeatherReducer.actions;
