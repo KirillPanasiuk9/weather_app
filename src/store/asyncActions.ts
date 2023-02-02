@@ -5,29 +5,17 @@ import {isDataFetchingSuccess, isDataFetchingError} from "../reducers/currentWea
 import {isForecastDataFetchingSuccess, isForecastDataFetchingError} from "../reducers/forecastWeatherReducer"
 
 
-
-const shakeInput = ():void => {
-    let input: any = document.getElementById("cityForm_Input");
-    input.style.transform = "translate(5px,0)"
-    setTimeout(() => input.style.transform = "translate(-5px,0)", 70)
-    setTimeout(() => input.style.transform = "translate(5px,0)", 140)
-    setTimeout(() => input.style.transform = "translate(-5px,0)", 210)
-    setTimeout(() => input.style.transform = "translate(5px,0)", 280)
-    setTimeout(() => input.style.transform = "translate(-5px,0)", 350)
-    setTimeout(() => input.style.transform = "translate(0,0)", 420)
-}
-
-
-
 export const fetchWeather = (city: string) => {
+    let input: any = document.getElementById("cityForm_Input");
     return async (dispatch: AppDispatch) => {
         try {
+            input.classList.remove("cityForm_Input-error");
             const response = await axios.get<CurrentWeather>(`https://api.weatherapi.com/v1/current.json?key=6295d433b18141779c695159222112&q=${city}`)
             dispatch(isDataFetchingSuccess(response.data))
         } catch (error: any) {
-            shakeInput()
-            dispatch(isDataFetchingError(error.message))
-            console.log(error.message)
+            input.classList.add("cityForm_Input-error");
+            dispatch(isDataFetchingError(error.message));
+            console.log(error.message);
         }
     }
 }
@@ -44,7 +32,6 @@ export const fetchWeekWeather = (city: string) => {
         }
     }
 }
-
 
 
 export const fetchWeatherByLocation = (lat: number, lon:number) => {

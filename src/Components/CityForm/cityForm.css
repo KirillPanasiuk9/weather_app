@@ -1,8 +1,5 @@
 .cityForm {
     margin: 150px auto 30px auto;
-    /*margin-top: 100px;*/
-    /*margin-bottom: 30px;*/
-    /*margin-top: 200px;*/
     max-width: 700px;
     height: 60px;
     display: flex;
@@ -20,6 +17,27 @@
     border: 2px white solid;
     border-radius: 10px;
     transition: 0.1s;
+}
+
+.cityForm_Input-error {
+    width: 65%;
+    height: 80%;
+    background: none;
+    padding-left: 10px;
+    font-size: 30px;
+    color: white;
+    border: 2px red solid;
+    border-radius: 10px;
+    transition: 0.5s;
+    animation-name: shake;
+    animation-duration: 1s;
+}
+
+@keyframes shake {
+    10%, 90% {transform: translate3d(-2px, 0, 0)}
+    20%, 80% {transform: translate3d(3px, 0, 0)}
+    30%, 50%, 70% {transform: translate3d(-5px, 0, 0)}
+    40%, 60% {transform: translate3d(6px, 0, 0)}
 }
 
 .cityForm_Input:focus {
