@@ -8,12 +8,8 @@ const CurrentWeather:FC = () => {
 
     return (
         <div className="currentWeather">
-            <div className="currentWeather_temperature">
-                {currentWeather.currentWeatherTemperature} °
-            </div>
-            <div className="currentWeather_image">
-                <img src={currentWeather.icon}/>
-            </div>
+            <div className="currentWeather_temperature">{currentWeather.currentWeatherTemperature} °</div>
+            <div className="currentWeather_image"><img src={currentWeather.icon}/></div>
         </div>
     );
 };

@@ -7,4 +7,4 @@ const ActionCreators = {fetchWeather, fetchWeekWeather, fetchWeatherByLocation};
 export const useActions = () => {
     const dispatch = useTypedDispatch();
     return bindActionCreators(ActionCreators, dispatch);
-}
+};

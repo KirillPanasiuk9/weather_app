@@ -7,7 +7,11 @@ const Location:FC = () => {
     const currentWeather = useTypedSelector(state => state.currentWeatherReducer);
 
     return (
-        <div className="location">{currentWeather.location}, {currentWeather.region}, {currentWeather.country}</div>
+        <div className="location">
+            {currentWeather.location},
+            {currentWeather.region},
+            {currentWeather.country}
+        </div>
     );
 };
 
