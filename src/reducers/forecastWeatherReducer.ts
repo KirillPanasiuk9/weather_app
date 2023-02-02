@@ -12,20 +12,9 @@ const initialState: ForecastState = {
 }
 
 const afterTomorrowWeekDay = () => {
-    const currentDate = new Date();
-    const weekDay = () => {
-        switch (currentDate.getDay()) {
-            case 6 : return "Monday";
-            case 0 : return "Tuesday";
-            case 1 : return "Wednesday";
-            case 2 : return "Thursday";
-            case 3 : return "Friday";
-            case 4 : return "Saturday";
-            case 5 : return "Sunday";
-        }
-    }
-
-    return weekDay()
+    const date = new Date();
+    date.setDate(date.getDate() + 2)
+    return date.toLocaleDateString('en-GB', {weekday: 'long'})
 }
 
 
