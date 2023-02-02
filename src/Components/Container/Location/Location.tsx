@@ -4,13 +4,11 @@ import "./location.css";
 
 const Location:FC = () => {
 
-    const currentWeather = useTypedSelector(state => state.currentWeatherReducer);
+    const {location, region, country} = useTypedSelector(state => state.currentWeatherReducer);
 
     return (
         <div className="location">
-            {currentWeather.location},
-            {currentWeather.region},
-            {currentWeather.country}
+            {location}, {region}, {country}
         </div>
     );
 };
